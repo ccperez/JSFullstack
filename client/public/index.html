@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alstar - Bootstrap one page parallax template</title>
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <!-- css -->
+    <script>
+      var url_arr = document.URL.split('/');
+      var page = url_arr[(url_arr.length>4) ? (url_arr.length-2) : (url_arr.length-1)];
+
+      var path = "";
+      if (page === 'reset_password') path = "../";
+      if (page === 'confirmation') path = "../../";
+
+      var keyPage = 0;
+      if (['signup', 'signin', 'confirmation', 'forgot_password', 'reset_password'].includes(page)) keyPage = 1;
+
+      if (keyPage) {
+        document.write('<link rel="stylesheet" type="text/css" href="'+path+'login/vendor/bootstrap/css/bootstrap.min.css">');
+        document.write('<link rel="stylesheet" type="text/css" href="'+path+'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">');
+        document.write('<link rel="stylesheet" type="text/css" href="'+path+'login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">');
+        document.write('<link rel="stylesheet" type="text/css" href="'+path+'login/vendor/animate/animate.css">	');
+        document.write('<link rel="stylesheet" type="text/css" href="'+path+'login/vendor/css-hamburgers/hamburgers.min.css">');
+        document.write('<link rel="stylesheet" type="text/css" href="'+path+'login/vendor/animsition/css/animsition.min.css">');
+        document.write('<link rel="stylesheet" type="text/css" href="'+path+'login/vendor/select2/select2.min.css">');
+        document.write('<link rel="stylesheet" type="text/css" href="'+path+'login/vendor/daterangepicker/daterangepicker.css">');
+        document.write('<link rel="stylesheet" type="text/css" href="'+path+'login/css/util.css">');
+        document.write('<link rel="stylesheet" type="text/css" href="'+path+'login/css/main.css">');
+        document.write('<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"/>');
+      } else {
+        document.write('<link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800"/>');
+        document.write('<link rel="stylesheet" media="screen" href="css/bootstrap.min.css"/>');
+        document.write('<link rel="stylesheet" media="screen" href="css/style.css"/>');
+        document.write('<link rel="stylesheet" media="screen" href="color/default.css"/>');
+      }
+    </script>
+  </head>
+  <body data-spy="scroll" data-target=".navigation" data-offset="80">
+
+    <div id="root"></div>
+
+    <script>
+      if (keyPage) {
+        document.write('<script src="'+path+'login/vendor/jquery/jquery-3.2.1.min.js"><\/script>');
+        document.write('<script src="'+path+'login/vendor/animsition/js/animsition.min.js"><\/script>');
+        document.write('<script src="'+path+'login/vendor/bootstrap/js/umd/popper.js"><\/script>');
+        document.write('<script src="'+path+'login/vendor/bootstrap/js/bootstrap.min.js"><\/script>');
+        document.write('<script src="'+path+'login/vendor/select2/select2.min.js"><\/script>');
+        document.write('<script src="'+path+'login/vendor/daterangepicker/moment.min.js"><\/script>');
+        document.write('<script src="'+path+'login/vendor/daterangepicker/daterangepicker.js"><\/script>');
+        document.write('<script src="'+path+'login/vendor/countdowntime/countdowntime.js"><\/script>');
+        document.write('<script src="'+path+'login/js/main.js"><\/script>');
+      } else {
+        document.write('<script src="js/jquery.js"><\/script>');
+        document.write('<script src="js/bootstrap.min.js"><\/script>');
+        document.write('<script src="js/wow.min.js"><\/script>');
+        document.write('<script src="js/jquery.scrollTo.min.js"><\/script>');
+        document.write('<script src="js/jquery.nav.js"><\/script>');
+        document.write('<script src="js/modernizr.custom.js"><\/script>');
+        document.write('<script src="js/grid.js"><\/script>');
+        document.write('<script src="js/stellar.js"><\/script>');
+        document.write('<script src="js/custom.js"><\/script>');
+      }
+    </script>
+
+  </body>
+</html>
